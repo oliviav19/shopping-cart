@@ -52,13 +52,13 @@ def to_usd(my_price):
 selected_ids = []
 
 while True:
-    selected_id = input("Please select or scan a valid product ID, otherwise type 'DONE' when complete: ")
+    selected_id = input("Please input or scan a valid product ID, otherwise type 'DONE' when complete: ")
     if selected_id.upper() == "DONE":
         break
     else:
         selected_ids.append(selected_id)
         # maybe display the selected product's name and price here/now
-    print(selected_id)
+    print("Product: ", selected_id)
 
 print("WE HAVE REACHED THE END OF THE LOOP")
 #print(selected_ids)
@@ -74,4 +74,4 @@ for selected_id in selected_ids:
     matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
     # FYI the result of our list comprehension will be a list!
     matching_product = matching_products[0] # ... so we'll need to access its first item using [0]
-    print(matching_product["name"], matching_product["price"])
+    print("Product: ", matching_product["name"], matching_product["price"])
