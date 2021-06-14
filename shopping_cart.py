@@ -51,6 +51,9 @@ selected_ids = []
 total_price = 0
 selected_ids = []
 
+print("Hello! Welcome to Westside Market! Please input or scan a product ID when prompted. You may type 'DONE' at any time after all items are scanned.")
+print("---------------------------------")
+
 while True:
     selected_id = input("Please input or scan a valid product ID, otherwise type 'DONE' when complete: ")
     if selected_id.upper() == "DONE":
@@ -61,12 +64,12 @@ while True:
         #total_price = total_price + matching_product["price"]
         #print("Selected Product: ", matching_product["name"], matching_product["price"])
         selected_ids.append(selected_id) #write a list of products after typing DONE
-
-if (selected_id == [selected_ids] or "DONE"):
-    print("Valid Entry")
-else: 
-    print("OOPS, one of your inputs is an incorrect product ID. Please try again.")
-    exit()
+    try:
+        matching_products = [] 
+        matching_product = matching_products[0] 
+        print("Matching product") 
+    except IndexError:
+        print("Invalid product. Please try again")
 
 print("---------------------------------")
 print("Westside Market")
@@ -85,11 +88,13 @@ print("Checkout At: ", dt_string)
 print("---------------------------------")
 
 print("Selected Products: ")
+
 for selected_id in selected_ids:
     matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
     matching_product = matching_products[0]
     total_price = total_price + matching_product["price"]
     print("...", matching_product["name"], to_usd(matching_product["price"]))
+ 
 
 print("---------------------------------")
 print("Subtotal: $" + str(total_price))
