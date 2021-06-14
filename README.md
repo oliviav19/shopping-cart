@@ -2,7 +2,7 @@
 
 Project Overview: 
 
-## Instalation
+## Installation
 
 Clone or download from Github (https://github.com/oliviav19/shopping-cart)
 
@@ -12,7 +12,7 @@ Navigate to the project repository on your local drive:
 cd shopping_cart.py
 ```
 
-##Usage
+## Usage
 
 Run the program: 
 
