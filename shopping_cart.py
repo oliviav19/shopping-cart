@@ -64,11 +64,18 @@ while True:
 
 print("---------------------------------")
 print("Westside Market")
-print("77 Seventh Avenue, New York, NY 10011")
-print("212-807-7771")
-print("wmarketny.com")
+print("Address: 77 Seventh Avenue, New York, NY 10011")
+print("Phone: 212-807-7771")
+print("Website: wmarketny.com")
 print("---------------------------------")
-print("Checkout At: ")
+
+from datetime import datetime
+# datetime object containing current date and time
+now = datetime.now()
+# dd/mm/YY H:M:S
+dt_string = now.strftime("%m/%d/%Y %H:%M:%S")
+print("Checkout At: ", dt_string)
+
 print("---------------------------------")
 
 print("Selected Products: ")
