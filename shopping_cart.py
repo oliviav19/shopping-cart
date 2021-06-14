@@ -52,20 +52,19 @@ def to_usd(my_price):
 selected_ids = []
 
 total_price = 0
+selected_ids = []
 
 while True:
     selected_id = input("Please input or scan a valid product ID, otherwise type 'DONE' when complete: ")
     if selected_id.upper() == "DONE":
         break
     else:
-        matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
-        matching_product = matching_products[0] # ... so we'll need to access its first item using [0]
-        total_price = total_price + matching_product["price"]
-        print("Selected Product: ", matching_product["name"], matching_product["price"])
-        
-print("Total Price: " + str(total_price))
+        #matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
+        #matching_product = matching_products[0] # ... so we'll need to access its first item using [0]
+        #total_price = total_price + matching_product["price"]
+        #print("Selected Product: ", matching_product["name"], matching_product["price"])
+        selected_ids.append(selected_id) #write a list of products after typing DONE
 
-selected_ids.append(selected_id) #write a list of products after typing DONE
   
 print("WE HAVE REACHED THE END OF THE LOOP")
 #print(selected_ids)
@@ -74,14 +73,12 @@ print("WE HAVE REACHED THE END OF THE LOOP")
 # 2) Perform product lookups to determine what the product's name and price are
 #selected_ids = ["1","2","3","2","1"]
 
-#for selected_id in selected_ids:
-    #print(selected_id)
-    # lookup the corresponding product!
-    # ... and display the selected product's name and price
-    #matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
-    #matching_product = matching_products[0] # ... so we'll need to access its first item using [0]
-    #print("Product: ", matching_product["name"], matching_product["price"])
+for selected_id in selected_ids:
+    matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
+    matching_product = matching_products[0] # ... so we'll need to access its first item using [0]
+    total_price = total_price + matching_product["price"]
+    print("Selected Product: ", matching_product["name"], matching_product["price"])
 
-
+print("Total Price: " + str(total_price))
 
     #print("Total Price: " + str(total_price))
