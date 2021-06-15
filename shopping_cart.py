@@ -64,12 +64,12 @@ while True:
         #total_price = total_price + matching_product["price"]
         #print("Selected Product: ", matching_product["name"], matching_product["price"])
         selected_ids.append(selected_id) #write a list of products after typing DONE
-    try:
-        matching_products = [] 
-        matching_product = matching_products[0] 
-        print("Matching product") 
-    except IndexError:
-        print("Invalid product. Please try again")
+    #try:
+        #matching_products = []  #none of this is working for some reason, can't figure it  out
+        #matching_product = matching_products[0] 
+        #print("Matching product") 
+    #except IndexError:
+        #print("Invalid product. Please try again")
 
 print("---------------------------------")
 print("Westside Market")
